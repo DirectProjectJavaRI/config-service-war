@@ -1,0 +1,46 @@
+Manifest-Version: 1.0
+Class-Path: config-service-jar-6.0-SNAPSHOT.jar spring-boot-starter-da
+ ta-jpa-2.0.5.RELEASE.jar spring-boot-starter-2.0.5.RELEASE.jar spring
+ -boot-2.0.5.RELEASE.jar spring-core-5.0.9.RELEASE.jar spring-jcl-5.0.
+ 9.RELEASE.jar spring-context-5.0.9.RELEASE.jar spring-aop-5.0.9.RELEA
+ SE.jar spring-beans-5.0.9.RELEASE.jar spring-expression-5.0.9.RELEASE
+ .jar spring-boot-autoconfigure-2.0.5.RELEASE.jar spring-boot-starter-
+ logging-2.0.5.RELEASE.jar logback-classic-1.2.3.jar logback-core-1.2.
+ 3.jar slf4j-api-1.7.25.jar log4j-to-slf4j-2.10.0.jar log4j-api-2.10.0
+ .jar jul-to-slf4j-1.7.25.jar javax.annotation-api-1.3.2.jar snakeyaml
+ -1.19.jar spring-boot-starter-aop-2.0.5.RELEASE.jar aspectjweaver-1.8
+ .13.jar spring-boot-starter-jdbc-2.0.5.RELEASE.jar HikariCP-2.7.9.jar
+  spring-jdbc-5.0.9.RELEASE.jar spring-tx-5.0.9.RELEASE.jar javax.tran
+ saction-api-1.2.jar hibernate-core-5.2.17.Final.jar jboss-logging-3.3
+ .2.Final.jar hibernate-jpa-2.1-api-1.0.2.Final.jar javassist-3.22.0-G
+ A.jar antlr-2.7.7.jar jandex-2.0.3.Final.jar classmate-1.3.4.jar dom4
+ j-1.6.1.jar hibernate-commons-annotations-5.0.1.Final.jar spring-data
+ -jpa-2.0.10.RELEASE.jar spring-data-commons-2.0.10.RELEASE.jar spring
+ -orm-5.0.9.RELEASE.jar spring-aspects-5.0.9.RELEASE.jar spring-boot-s
+ tarter-tomcat-2.0.5.RELEASE.jar tomcat-embed-core-8.5.34.jar tomcat-e
+ mbed-el-8.5.34.jar tomcat-embed-websocket-8.5.34.jar spring-boot-star
+ ter-web-2.0.5.RELEASE.jar spring-boot-starter-json-2.0.5.RELEASE.jar 
+ spring-web-5.0.9.RELEASE.jar jackson-databind-2.9.6.jar jackson-annot
+ ations-2.9.0.jar jackson-core-2.9.6.jar jackson-datatype-jdk8-2.9.6.j
+ ar jackson-datatype-jsr310-2.9.6.jar jackson-module-parameter-names-2
+ .9.6.jar hibernate-validator-6.0.12.Final.jar validation-api-2.0.1.Fi
+ nal.jar spring-webmvc-5.0.9.RELEASE.jar config-store-1.6.jar direct-p
+ olicy-1.0.jar xstream-1.4.4.jar xmlpull-1.1.3.1.jar xpp3_min-1.1.4c.j
+ ar bcprov-jdk15-140.jar mail-1.4.3.jar commons-logging-1.1.1.jar comm
+ ons-io-1.4.jar commons-lang-2.5.jar jackson-jaxrs-1.7.5.jar jackson-c
+ ore-asl-1.7.5.jar jackson-mapper-asl-1.7.5.jar direct-common-6.0-SNAP
+ SHOT.jar dsn-1.4.3.jar activation-1.1.jar jdom-1.1.jar commons-codec-
+ 1.11.jar config-model-6.0-SNAPSHOT.jar commons-collections-3.1.jar dn
+ sjava-2.0.8.jar spring-asm-3.0.4.RELEASE.jar spring-test-5.0.9.RELEAS
+ E.jar commons-dbcp-1.4.jar commons-pool-1.6.jar jta-1.1.jar hibernate
+ -3.2.7.ga.pom ehcache-2.10.5.jar asm-attrs-1.5.3.jar cglib-2.1_3.jar 
+ asm-1.5.3.jar geronimo-jpa_2.0_spec-1.0.jar hibernate-entitymanager-5
+ .2.17.Final.jar byte-buddy-1.7.11.jar jboss-transaction-api_1.2_spec-
+ 1.0.1.Final.jar hibernate-annotations-3.3.1.GA.jar hibernate-3.2.6.ga
+ .jar hibernate-commons-annotations-3.0.0.ga.jar jaxb-api-2.3.0.jar co
+ mmons-collections4-4.2.jar commons-lang3-3.7.jar commons-text-1.4.jar
+  mina-core-1.0.9.jar backport-util-concurrent-3.0.jar bcmail-jdk15-14
+ 0.jar camel-core-2.22.0.jar jaxb-core-2.3.0.1.jar jaxb-impl-2.3.0.1.j
+ ar camel-spring-2.22.0.jar camel-mina-2.22.0.jar commons-net-3.6.jar 
+ postgresql-8.4-701.jdbc4.jar derby-10.4.1.3.jar
+
