@@ -17,8 +17,7 @@
 	
 	<!--  The components scan loads the entity factory manager, entity and DAO object, SpringMVC resources,
 	      bundles processors,  and keystore configuration.  Configuration properties are found in properties/config.properties-->
-	<context:component-scan base-package="org.nhindirect.config.springconfig, org.nhindirect.config.boot, 
-		org.nhindirect.config.store, org.nhindirect.config.resources" />
+	<context:component-scan base-package="org.nhindirect.config" />
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
    <context:property-placeholder location="classpath:properties/config.properties"/>	
