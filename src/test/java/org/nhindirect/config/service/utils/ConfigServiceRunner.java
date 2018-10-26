@@ -85,7 +85,7 @@ public class ConfigServiceRunner
 		}
 	}
 	
-	public synchronized static String getHPDServiceURL()
+	public synchronized static String getConfigServiceURL()
 	{
 		return serviceURL;
 	}
