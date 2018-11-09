@@ -18,9 +18,10 @@
         <maven>3.0.0</maven>
     </prerequisites>  	
 	<parent>
-	   <groupId>org.springframework.boot</groupId>
-	   <artifactId>spring-boot-dependencies</artifactId>
-	   <version>2.1.0.RELEASE</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+	    <version>2.1.0.RELEASE</version>   
+		<relativePath />
 	</parent>		
     <developers>
         <developer>
@@ -37,16 +38,57 @@
           <name>New BSD License</name>
           <url>http://nhindirect.org/BSDLicense</url>
        </license>
-    </licenses>    
+    </licenses>   
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<camel.version>2.22.0</camel.version>
+	</properties>  
+  	<repositories>
+	    <!-- Temp repository for Spring Boot Milestone -->
+        <repository>
+            <id>spring-milestone</id>
+            <name>Spring Milestone Releases</name>
+            <url>https://repo.spring.io/milestone/</url>
+        </repository>
+     </repositories>  	  	
+	<dependencyManagement>
+		<dependencies>											
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>2.1.0.RELEASE</version> 
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>			
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-parent</artifactId>
+				 <version>Greenwich.M1</version>
+				<type>pom</type>
+				<scope>import</scope>		
+			</dependency>											
+		</dependencies>
+	</dependencyManagement>		   
 	<dependencies>
 		<dependency>
 			<groupId>org.nhind</groupId>
 			<artifactId>config-service-jar</artifactId>
 			<version>6.0-SNAPSHOT</version>		
 		</dependency>	
+		<dependency>
+			<groupId>org.nhind</groupId>
+			<artifactId>config-store</artifactId>
+			<version>6.0-SNAPSHOT</version>		
+		</dependency>			
+		<dependency>
+		    <groupId>org.apache.camel</groupId>
+		    <artifactId>camel-spring-boot-starter</artifactId>
+		    <version>${camel.version}</version>
+		</dependency>			
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>         
+            <artifactId>spring-boot-starter-tomcat</artifactId>    
+            <scope>provided</scope>                 
         </dependency> 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -127,7 +169,7 @@
 					<source>1.8</source>
 					<target>1.8</target>
 				</configuration>
-			</plugin>	
+			</plugin>		
 			<!--  for releases only 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
