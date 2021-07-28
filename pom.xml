@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.nhind</groupId>
 	<artifactId>config-service-war</artifactId>
-	<version>6.0.1-SNAPSHOT</version>
+	<version>8.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>NHIN-Direct Configuration Service Web Application Module</name>
 	<description>NHIN-Direct Configuration Service Web Application Module</description>
@@ -15,12 +15,12 @@
 		<connection>scm:git:https://github.com/DirectProjectJavaRI/config-service-war.git</connection>
 	</scm>
     <prerequisites>
-        <maven>3.0.0</maven>
+        <maven>3.5.0</maven>
     </prerequisites>  	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-	    <version>2.1.3.RELEASE</version>   
+	    <version>2.5.2</version>   
 		<relativePath />
 	</parent>		
     <developers>
@@ -41,21 +41,20 @@
     </licenses>   
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<camel.version>2.22.0</camel.version>
 	</properties>  	  	
 	<dependencyManagement>
 		<dependencies>											
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
-				<version>2.1.3.RELEASE</version> 
+				<version>2.5.2</version> 
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>			
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-starter-parent</artifactId>
-				 <version>Greenwich.SR1</version>
+				 <version>2020.0.3</version>
 				<type>pom</type>
 				<scope>import</scope>		
 			</dependency>											
@@ -65,23 +64,27 @@
 		<dependency>
 			<groupId>org.nhind</groupId>
 			<artifactId>config-service-jar</artifactId>
-			<version>6.0.2-SNAPSHOT</version>		
+			<version>8.0.0-SNAPSHOT</version>		
 		</dependency>	
 		<dependency>
 			<groupId>org.nhind</groupId>
 			<artifactId>config-store</artifactId>
-			<version>6.0.1-SNAPSHOT</version>		
-		</dependency>			
-		<dependency>
-		    <groupId>org.apache.camel</groupId>
-		    <artifactId>camel-spring-boot-starter</artifactId>
-		    <version>${camel.version}</version>
-		</dependency>			
+			<version>8.0.0-SNAPSHOT</version>		
+		</dependency>						
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>    
-            <scope>provided</scope>                 
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+			<exclusions>
+			   <exclusion>
+			      <artifactId>tomcat-embed-websocket</artifactId>
+			      <groupId>org.apache.tomcat.embed</groupId>
+			   </exclusion>
+			</exclusions>                               
         </dependency> 
+		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-bootstrap</artifactId>
+		</dependency>        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>         
@@ -89,25 +92,20 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>         
-        </dependency>  	        			 
-	    <dependency>
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter-data-jpa</artifactId>
-	    </dependency>	
+        </dependency>  	        			 	
 	    <dependency>
 	    	<groupId>org.springframework.boot</groupId>
 	    	<artifactId>spring-boot-starter-security</artifactId>
-	    </dependency>	    
+	    </dependency>	    	
 		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>1.4</version>
-			<scope>runtime</scope>
-		</dependency>	
+		    <groupId>com.h2database</groupId>
+		    <artifactId>h2</artifactId>
+			<scope>runtime</scope>	  		    
+		</dependency>		
 	    <dependency>
 	        <groupId>org.apache.derby</groupId>
 	        <artifactId>derby</artifactId>
-			<scope>runtime</scope>	        
+			<scope>runtime</scope>	  	        
 	    </dependency>	
 		<dependency>
 		    <groupId>mysql</groupId>
@@ -118,7 +116,22 @@
 		    <groupId>org.postgresql</groupId>
 		    <artifactId>postgresql</artifactId>
 			<scope>runtime</scope>	  		    
-		</dependency>			    		    			    
+		</dependency>	
+		<dependency>
+		    <groupId>dev.miku</groupId>
+		    <artifactId>r2dbc-mysql</artifactId> 
+			<scope>runtime</scope> 		    
+		</dependency>		
+		<dependency>
+		    <groupId>io.r2dbc</groupId>
+		    <artifactId>r2dbc-postgresql</artifactId> 
+			<scope>runtime</scope> 		    
+		</dependency>	
+	    <dependency>
+	       <groupId>io.r2dbc</groupId>
+	       <artifactId>r2dbc-h2</artifactId>
+	       <scope>runtime</scope>
+	    </dependency>						    		    			    
 		<dependency>  
 			<groupId>org.eclipse.jetty</groupId>  
 			<artifactId>test-jetty-servlet</artifactId>  
@@ -126,7 +139,6 @@
 		    <scope>test</scope>	    	 			
 		</dependency> 	 
 	</dependencies>
-
 	<build>
 		<plugins>
 		      <plugin>
@@ -163,9 +175,8 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9.1</version>
 				<configuration>
-				    <additionalparam>-Xdoclint:none</additionalparam>
+				    <additionalJOption>-Xdoclint:none</additionalJOption>
 					<charset>UTF-8</charset>
 					<docencoding>UTF-8</docencoding>
 					<docfilessubdirs>true</docfilessubdirs>
@@ -197,6 +208,7 @@
                     </goals>
                  </execution>
                </executions>
+               <version>3.0.1</version>
             </plugin>
 		    -->
 		</plugins>

@@ -1,0 +1,19 @@
+org:
+  apache:
+    tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH: true
+    catalina.connector.CoyoteAdapter.ALLOW_BACKSLASH: true
+
+spring:
+  application:
+    name: direct-config-service
+
+  jmx:
+    default-domain: direct-config-service
+
+#unique jmx names to avoid collisions when running
+#multiple spring boot apps in an web container
+endpoints:
+  jmx:
+    default-domain: direct-config-service
+    uniqueNames: true
+
