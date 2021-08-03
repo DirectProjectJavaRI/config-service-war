@@ -1,0 +1,26 @@
+# automatically expand info properties from the Maven project using resource filtering
+info:
+  build:
+    artifact: '@project.artifactId@'
+    name: '@project.name@'
+    description: '@project.description@'
+    version: '@project.version@'
+
+spring:
+#Default username and password
+  security:
+    basic.enabled: true
+    user:
+      name: admin
+      password: '{bcrypt}$2a$04$WQsYXSBOnycO1/7E9bKUVevWX3.Gxv2V6ZfYx9UKoy3lm9.4TjU7e'
+
+#Default H2 Database Settings.  This is not recommended for production use
+#and not fit for purpose for ephemeral deployments (you are almost guaranteed to lose your data if 
+#using an ephemeral environment)
+  r2dbc:
+    url: r2dbc:h2:file:///./embedded-db/nhindconfig
+    username: sa
+    password: 
+
+  sql.init.platform: h2
+  sql.init.mode: ALWAYS
