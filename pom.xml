@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.nhind</groupId>
 	<artifactId>config-service-war</artifactId>
-	<version>8.0.0</version>
+	<version>8.0.1</version>
 	<packaging>war</packaging>
 	<name>NHIN-Direct Configuration Service Web Application Module</name>
 	<description>NHIN-Direct Configuration Service Web Application Module</description>
@@ -64,7 +64,7 @@
 		<dependency>
 			<groupId>org.nhind</groupId>
 			<artifactId>config-service-jar</artifactId>
-			<version>8.0.0</version>		
+			<version>8.0.1</version>		
 		</dependency>	
 		<dependency>
 			<groupId>org.nhind</groupId>
@@ -194,8 +194,8 @@
 	                </goals>
 	              </execution>
 	            </executions>					
-			</plugin>	
-			<!--  for releases only 				
+			</plugin>		
+			<!-- for releases only			
 	        <plugin>
                <groupId>org.apache.maven.plugins</groupId>
                <artifactId>maven-gpg-plugin</artifactId>
@@ -210,7 +210,7 @@
                </executions>
                <version>3.0.1</version>
             </plugin>
-		    -->
+             -->
 		</plugins>
 	</build>
 	<distributionManagement>
