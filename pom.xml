@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.nhind</groupId>
 	<artifactId>config-service-war</artifactId>
-	<version>8.1.0-SNAPSHOT</version>
+	<version>8.0.4</version>
 	<packaging>war</packaging>
 	<name>NHIN-Direct Configuration Service Web Application Module</name>
 	<description>NHIN-Direct Configuration Service Web Application Module</description>
@@ -64,7 +64,7 @@
 		<dependency>
 			<groupId>org.nhind</groupId>
 			<artifactId>config-service-jar</artifactId>
-			<version>8.0.3</version>		
+			<version>8.0.4</version>		
 		</dependency>	
 		<dependency>
 			<groupId>org.nhind</groupId>
